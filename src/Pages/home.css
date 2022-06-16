@@ -1,0 +1,65 @@
+.grid{
+    width: 60%;
+    margin: auto;
+    margin-top: 4rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+}
+.grid img{
+    width:393px
+}
+.jewellery .prodcard>div>img{
+    width:80%;
+    margin: 5%;
+    height: 200px;
+}
+.jewellery .prodcard{
+    width: 300px;
+    height: auto;
+    margin: 1rem 1rem 1rem 1rem;
+    /* border: 1px solid ; */
+    padding: 2rem;
+    cursor: pointer;
+}
+.jewellery{
+    margin-left: 15%;
+    margin-top: 2rem;
+}
+.flashsale .prodcard div>img{
+    width: 100%;
+    height: 100%;
+}
+.flashsale .prodcard div{
+    width: 300px;
+    height: 300px;
+}
+.flashsale{
+    margin-left: 15%;
+    margin-top: 2rem;
+    overflow: scroll;
+ 
+    width: 70%;
+    
+    
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+ 
+.flashsale .prodcard{
+    width: 300px;
+    height: auto;
+    margin: 1rem 1rem 1rem 1rem;
+    /* border: 1px solid ; */
+    /* padding: 2rem; */
+    cursor: pointer;
+}
+#__next {
+    padding: 20px;
+  }
+  .image-item {
+    padding: 20px 0 20px 20px;
+  }
+  

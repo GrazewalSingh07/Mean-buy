@@ -1,0 +1,50 @@
+.section{
+    display: flex;
+    width: 80%;
+    margin: 2rem auto;
+    justify-content: space-around;
+    border: .5px solid gray;
+    padding: 2rem;
+
+}
+hr{
+    color: #F98D29;
+}
+.input{
+    width: 902px;
+    padding: 10px;
+    border: .5px solid grey;
+    margin-bottom: 10px;
+}
+.loginbtn{
+    width: 902px;
+   margin-top: 2rem;
+   background-color: #F98D29;
+   border: none;
+   padding: 10px 25px 10px 5px;
+
+}
+
+.editcart{
+    width: 387px;
+    margin-top: 2rem;
+    background-color: white;
+    border:1px solid #F98D29;
+    padding: 15px 0px 15px 0px;
+    margin: 1rem;
+}
+.rightside{
+    /* border:.5px solid black; */
+     
+}
+.righttop{
+    border: .5px solid grey;
+   
+}
+.titles{
+    padding: 10px 10px 0px 25px;
+}
+.rightbottom{
+    text-align: center;
+    margin: 1rem;
+}

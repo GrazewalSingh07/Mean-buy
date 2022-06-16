@@ -1,0 +1,21 @@
+.featuredslide{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    text-align: center;
+    margin: 2rem auto;
+}
+.featuredslide>div{
+    margin: 1rem;
+}
+.featuredslide>div>img{
+ width: 100px;
+}
+.featuredslide>div>h3{
+    color:#F98D29
+}
+.Footerlist{
+   display: flex;
+   justify-content: space-around;
+  
+}

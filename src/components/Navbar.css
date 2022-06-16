@@ -1,0 +1,50 @@
+.megadropdown{
+    display:flex;
+ background-color: white;
+  box-shadow: none
+}
+.megadropdown>div{
+    margin: 1rem;
+  
+}
+ .megadropdown >div>.menu{
+    box-shadow: none
+ }
+ .logoandsearch{
+    display: flex;
+    
+    /* width: 50%; */
+ }
+ /* .logoandsearch>span{
+  margin: 1rem;
+ }
+  */
+ .inputbox{
+     padding: 5px 10px;
+     width: 360px;
+     margin:1rem;
+     margin-left: 2rem;
+     border: .5px solid gray;
+     
+ }
+ .inputbox:active{
+    outline:.5px red dashed;
+}
+ .logo{
+    width: 200px;
+ }
+ .rightNavtop{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+ }
+ .siguplogin{
+    width: 200px;
+ }
+ .navbottom>*{
+    margin:1rem;
+ }
+ .navbottom{
+    margin-left: 15%
+ }
+ 
