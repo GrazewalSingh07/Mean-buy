@@ -9,12 +9,12 @@
 .grid img{
     width:393px
 }
-.jewellery .prodcard>div>img{
+.jewellery .Homeprodcard>div>img{
     width:80%;
     margin: 5%;
     height: 200px;
 }
-.jewellery .prodcard{
+.jewellery .Homeprodcard{
     width: 300px;
     height: auto;
     margin: 1rem 1rem 1rem 1rem;
@@ -26,11 +26,11 @@
     margin-left: 15%;
     margin-top: 2rem;
 }
-.flashsale .prodcard div>img{
+.flashsale .Homeprodcard div>img{
     width: 100%;
     height: 100%;
 }
-.flashsale .prodcard div{
+.flashsale .Homeprodcard div{
     width: 300px;
     height: 300px;
 }
@@ -48,7 +48,7 @@
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
  
-.flashsale .prodcard{
+.flashsale .Homeprodcard{
     width: 300px;
     height: auto;
     margin: 1rem 1rem 1rem 1rem;

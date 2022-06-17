@@ -1,9 +1,28 @@
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import {BsBag,BsSearch} from "react-icons/bs" 
 import {FaShoppingCart} from"react-icons/fa"
+import { useDispatch } from "react-redux"
 
 import "./Login.css"
+import { useState } from "react"
+import { login } from "../Redux/Login/action"
 export const Login=()=>{
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
+    const [email,setEmail]= useState("")
+    const [password,setpassword]=useState("")
+
+    const  LoginFunction=()=>{
+        if(email==""&&password==""){
+            alert("Field must not be empty")
+        }
+       else{
+        dispatch(login({"password":password,"username":email})).then(()=>{
+            navigate("/")
+        })
+       
+       }
+    }
     return  <div>
         <div style={{width:"90%",margin:" 1rem auto", }}>
         <div style={{display:"flex",justifyContent:"space-around"}}>
@@ -33,12 +52,12 @@ export const Login=()=>{
         <div>
             <h3>Login or Create Account</h3>
             <div>
-                <p>Email Address</p>
-                <input className="input" type="text" placeholder="Email Address" />
+                <p>Username</p>
+                <input className="input" type="text" placeholder="Username" onChange={(e)=>setEmail(e.target.value)}/>
                 <p>Password</p>
-                <input className="input" type="text"placeholder="password"/>
+                <input className="input" type="password"placeholder="password" onChange={(e)=>setpassword(e.target.value)}/>
                  
-                <button className="loginbtn">Login</button>
+                <button className="loginbtn" onClick={LoginFunction}>Login</button>
 
                <div style={{textAlign:"center", margin:"1rem"}}> 
                 <p>Forgot Password?</p>

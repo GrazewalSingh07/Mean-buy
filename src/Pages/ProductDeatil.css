@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    margin: 2rem;
+}
+.btn{
+ background-color: green;
+ border: none;
+ padding:.5rem 1rem;
+ color: white;
+ margin: 1rem;
+ cursor: pointer;
+}
+.btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.container>div{
+    margin: 2rem;
+}
+.container img{
+    width: 400px;
+}
+.detaildiv{
+    width: 50%;
+    text-align:left;
+}
+.detaildiv p{
+    width: 70%;
+}
+.imgdiv{
+    width: 50%;
+   text-align: center;
+}

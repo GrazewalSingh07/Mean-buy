@@ -1,69 +1,24 @@
-import { useEffect, useState } from "react"
-import { useDispatch,useSelector } from "react-redux"
-import {useParams} from "react-router"
-import { getproduct } from "../Redux/Product/actions"
- 
-import { useNavigate } from "react-router-dom"
- 
-export const Products=()=>{
-    const [filter,setfilter]=useState("all")
-    const [filtereddata,setfiltereddata]=useState([])
-    const navigate=useNavigate()
-    const data=useSelector((state)=>state.product.data)
-    const {cat}=useParams()
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux/es/exports"
+import { Navigate, useNavigate } from "react-router-dom"
+import { getcart } from "../Redux/Cart/action"
+
+export const Cart=()=>{
+    const isAuth=useSelector((state)=>state.login.LoginSuccess)
     const dispatch=useDispatch()
-   
-  
+    const navigate=useNavigate()
+    const cart=useSelector((state)=>state.cart.cart)
     useEffect(()=>{
-        dispatch(getproduct(cat))
-    },[cat])
-    const [sort,setsort]=useState("asc")
-    
-    
-    
-    function handleChange(value){
-      setfilter(value)
-    }
-
-    useEffect(()=>{
-        
-        if(filter=="all"){
-            setfiltereddata(data)
-        }
-        else{
-            let temp=data?.filter((el)=>{
-                if(el.colors[0]==filter){
-                 return el
-                }
-         })
-         setfiltereddata(temp)
-        }
-       
-        // console.log(temp)
-       
-    },[filter,cat])
-
-    useEffect(()=>{
-        setfiltereddata(data)
+        dispatch(getcart()) 
     },[])
-    return <div style={{display:"flex"}}>
-       <div style={{width:"20%"}}>
-         <div>
-            <select defaultValue="tan" onChange={(e)=>handleChange(e.target.value)}>
-                <option value="">Filter by color</option>
-                <option value="all">All</option>
-                <option value="Black">Black</option>
-                <option value="Natural">Natural</option>
-                <option value="Golden">Golden</option>
-            </select>
-         </div>
-            <h1>Sort</h1>
-       </div>
-
-       <div className="products">
-        {filtereddata?.map((el)=>{
+    if(!isAuth){
+        alert("Kindly, Login")
+        return <Navigate to="/login"/>
+    }
+    return <div>
+         {cart?.map((el)=>{
             if(el.category=="men's clothing"||el.category=="women's clothing"||el.category=="jewelery"||el.category=="electronics"){
-                
+                console.log(el)
                return <div key={el.id} className="prodcard" onClick={()=>{navigate(`/product-detail/${el.id}`)}}>
                     <div >
                      <img className="img"src={el.image} alt="" />
@@ -99,8 +54,5 @@ export const Products=()=>{
              }
             
             })}
-        </div>
-        
     </div>
 }
-     

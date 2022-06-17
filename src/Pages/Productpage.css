@@ -1,0 +1,34 @@
+.prodcard{
+    width: 310px;
+    /* height:500px; */
+    height: 550px;
+    margin:auto;
+   
+    cursor: pointer;
+
+}
+.prodcard:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.prodcard>div{
+    width: 310px;
+    height:400px;
+    margin: auto;
+}
+.prodcard .img{
+    width: 100%;
+    height:90%;
+    margin: auto;
+    padding: 1rem;
+}
+.products{
+    width:70%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:2rem
+
+}
+.proddetail{
+    padding: .5rem;
+    /* margin: .5rem; */
+}

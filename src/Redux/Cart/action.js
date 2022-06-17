@@ -22,7 +22,7 @@ export const addtocartfailure=()=>{
 export const addtocart=(data)=>(dispatch)=>{
 
     dispatch(addtocartrequest)
-     axios.post("http://localhost:8080/cart",data).then((res)=>{
+    return axios.post("http://localhost:4000/cart",data).then((res)=>{
         dispatch(addtocartsuccess)
      }).catch((err)=>{
         dispatch(addtocartfailure)
@@ -51,8 +51,8 @@ export const removefromcartfailure=()=>{
 
 export const removefromcart=(id)=>(dispatch)=>{
 
-    dispatch(addtocartrequest)
-     axios.delete(`http://localhost:8080/cart/${id}`).then((res)=>{
+    dispatch(removefromcartrequest)
+    return axios.delete(`http://localhost:4000/cart/${id}`).then((res)=>{
         dispatch(removefromcartsuccess)
      }).catch((err)=>{
         dispatch(removefromcartfailure)
@@ -79,11 +79,12 @@ export const getcartfailure=()=>{
     }
 }
 
-export const getcart=(id)=>(dispatch)=>{
+export const getcart=()=>(dispatch)=>{
 
-    dispatch(addtocartrequest)
-    return axios.get(`http://localhost:8080/cart`).then((res)=>{
-        dispatch(removefromcartsuccess(res.data))
+    dispatch(getcartrequest)
+     return axios.get(`http://localhost:4000/cart`).then((res)=>{
+        console.log(res.data)
+        dispatch(getcartsuccess(res.data))
      }).catch((err)=>{
             dispatch(getcartfailure)
      })

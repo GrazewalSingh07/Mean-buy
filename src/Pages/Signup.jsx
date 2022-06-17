@@ -1,9 +1,37 @@
-import {Link} from "react-router-dom"
+import {Link, Navigate, useNavigate} from "react-router-dom"
 import {BsBag,BsSearch} from "react-icons/bs" 
 import {FaShoppingCart} from"react-icons/fa"
 
 import "./Login.css"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { Register } from "../Redux/Register/action"
 export const SignUp=()=>{
+         const dispatch=useDispatch()
+    const navigate=useNavigate()
+    const [email,setEmail]= useState("")
+    const [password,setpassword]=useState("")
+     
+    const [Confirmpassword,setConfirmpassword]=useState("")
+
+
+    const RegisterFunction=()=>{
+        if(password==Confirmpassword&& email!="" &&password!=""){
+            dispatch(Register({ "name": "MASAI School","email":email, "password":password,"username": "masai-school",
+            "mobile": "9876543210",
+            "description": "A Transformation in education!" })).then((res)=>{
+                navigate("/login")
+            })
+        }
+       else{
+         if(email==""||password==""){
+            alert("Fields must not be empty")
+         }
+         else if(password!=Confirmpassword){
+            alert("Password and Confirm Password must be same")
+         }
+       }
+    }
     return  <div>
         <div style={{width:"90%",margin:" 1rem auto", }}>
         <div style={{display:"flex",justifyContent:"space-around"}}>
@@ -34,12 +62,12 @@ export const SignUp=()=>{
             <h2 style={{color:"#F98D29"}}>Login or Create Account</h2>
             <div>
                 <p>Email Address</p>
-                <input className="input" type="text" placeholder="Email Address" />
+                <input className="input" type="text" placeholder="Email Address" onChange={(e)=>{setEmail(e.target.value)}}/>
                 <p>Password</p>
-                <input className="input" type="text"placeholder="Password"/>
+                <input className="input" type="password"placeholder="Password" onChange={(e)=>{setpassword(e.target.value)}}/>
                 <p> Confirm Password</p>
-                <input className="input" type="text"placeholder=" Confirm Password"/>
-                <button className="loginbtn">Sign Up</button>
+                <input className="input" type="text" placeholder=" Confirm Password" onChange={(e)=>{setConfirmpassword(e.target.value)}}/>
+                <button className="loginbtn" onClick={RegisterFunction}>Sign Up</button>
 
                <div style={{textAlign:"center", margin:"1rem"}}> 
                 <p>Already have a MeanBuy account?<Link style={{color:"black"}}to="/login"> Log In</Link></p>

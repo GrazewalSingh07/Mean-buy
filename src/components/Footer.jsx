@@ -1,7 +1,7 @@
 import {AiOutlineMail} from "react-icons/ai"
 import { useState } from "react"
 import {FaInstagram,FaFacebook,FaCcMastercard} from "react-icons/fa"
-import {FiChevronRight,FiChevronLeft} from "react-icons/fi"
+
 import { FaAmazon} from "react-icons/fa"
 import {GrAmex} from "react-icons/gr"
 import {SiGooglepay} from "react-icons/si"
@@ -11,29 +11,7 @@ import "./Footer.css"
 
 export const Footer=()=>{
     return <div>
-            <div style={{ width:"80%",margin:"auto"}}>
-                <div><h1>Featured</h1> <hr /></div>
-                
-            </div>
-         <div className="featuredslide">
-            <FiChevronLeft style={{fontSize:"3rem", color:"#F98D29",marginTop:"10%"}}/>
-                 <div>
-                    <img src="https://d64lkarmo2mrq.cloudfront.net/img/as_seen_on/chainmag.jpg"  alt="#" />
-                    <h4>Chain Magazine</h4>
-                    <h3>MeanBuy - An Indian StartUp eCommerce Market Place</h3>
-                </div>
-                <div>
-                    <img src="https://d64lkarmo2mrq.cloudfront.net/img/as_seen_on/sillicon.jpg" alt="#" />
-                    <h4>Silicon India</h4>
-                    <h3>10 Most Promising E- Commerce Startups</h3>
-                </div>
-                <div>
-                    <img src="https://d64lkarmo2mrq.cloudfront.net/img/as_seen_on/medium.jpg" alt="#" />
-                    <h4>Flair Explorer</h4>
-                    <h3>E-commerce Inside the Startup Ecosystem in India</h3>
-                </div>
-           <FiChevronRight style={{fontSize:"3rem", color:"#F98D29",marginTop:"10%"}}/>
-         </div>
+          
          <div style={{width:"80%", margin:"auto"}}>
             <div className="Footerlist">
                 <div>

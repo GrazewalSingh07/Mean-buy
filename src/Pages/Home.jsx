@@ -3,7 +3,7 @@ import { Slider } from "../components/Slider"
 import "./home.css"
  import {Link} from "react-router-dom"
 import axios from "axios"
- 
+import {FiChevronRight,FiChevronLeft} from "react-icons/fi"
 
 
 export const Home=()=>{
@@ -76,19 +76,15 @@ useEffect(()=>{
 },[])
     return  <div style={{margin:"auto"}}>
         <Slider/>
-
-
-
-       
         <div  className="jewellery">
             <div style={{display:"flex" , textAlign:"center", margin:"auto"}}>
                 <h2 style={{textAlign:"center"}}>Fast moving product</h2>
-                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________________________________________ <Link to={`products/jewelery`}>VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} > _______________________________________________________________________________________________________________________________________________ <Link to={`products/jewelery`}>VIEW ALL</Link></p>
   
             </div>
             <div style={{display:"flex"}}>
                     {jwellery?.map((el)=>(
-                        <div key ={el.id}className="prodcard">
+                        <div key ={el.id}className="Homeprodcard">
                             <div>
                                 <img src={el.image} alt="" />
                             </div>
@@ -108,13 +104,13 @@ useEffect(()=>{
        
             <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Flash Sale</h2>
-                <p style={{textAlign:"center",}} >  _______________________________________________________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
-  
+                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
+
             </div>
             <div  className="flashsale">
             <div style={{display:"flex"}}>
                     {homedecor?.map((el)=>(
-                        <div key ={el.id}className="prodcard">
+                        <div key ={el.id}className="Homeprodcard">
                             <div>
                                 <img src={el.images[0]} alt="" />
                             </div>
@@ -133,14 +129,14 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Fashion</h2>
-                <p style={{textAlign:"center",}} >  ___________________________________________________________________________________________________________________________________________________________________________________________________ <Link to="products/fashion">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  _________________________________________________________________________________________________________________________________________________________ <Link to="products/fashion">VIEW ALL</Link></p>
   
          </div>
         <div  className="flashsale">
             
             <div style={{display:"flex"}}>
                     {fashion?.map((el)=>(
-                        <div key ={el.id}className="prodcard">
+                        <div key ={el.id}className="Homeprodcard">
                             <div>
                                 <img src={el.image} alt="" />
                             </div>
@@ -159,14 +155,14 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Belts</h2>
-                <p style={{textAlign:"center",}} >  ___________________________________________________________________________________________________________________________________________________________________________________________________________ <Link to="products/belts">VIEW ALL</Link> </p>
+                <p style={{textAlign:"center",}} >  _________________________________________________________________________________________________________________________________________________________ <Link to="products/belt">VIEW ALL</Link> </p>
   
             </div>
         <div  className="flashsale">
            
             <div style={{display:"flex"}}>
                     {belt?.map((el)=>(
-                        <div key ={el.id}className="prodcard">
+                        <div key ={el.id}className="Homeprodcard">
                             <div>
                                 <img src={el.images[0]} alt="" />
                             </div>
@@ -185,14 +181,14 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center",margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Wallets</h2>
-                <p style={{textAlign:"center",}} >  _____________________________________________________________________________________________________________________________________________________________________________________________________<Link to="products/wallets">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  _________________________________________________________________________________________________________________________________________________<Link to="products/wallet">VIEW ALL</Link></p>
   
             </div>
         <div  className="flashsale">
             
             <div style={{display:"flex"}}>
                     {wallet?.map((el)=>(
-                        <div key ={el.id} className="prodcard">
+                        <div key ={el.id} className="Homeprodcard">
                             <div>
                                 <img src={el.images[0]} alt="" />
                             </div>
@@ -211,14 +207,14 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Electronics</h2>
-                <p style={{textAlign:"center",}} >  ___________________________________________________________________________________________________________________________________________________________________________________________________ <Link to="products/eletronics">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  ______________________________________________________________________________________________________________________________________________________ <Link to="products/electronics">VIEW ALL</Link></p>
   
             </div>
         <div  className="flashsale">
             
             <div style={{display:"flex"}}>
                     {toys?.map((el)=>(
-                        <div key ={el.id} className="prodcard">
+                        <div key ={el.id} className="Homeprodcard">
                             <div>
                                 <img src={el.image} alt="" />
                             </div>
@@ -237,14 +233,14 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>kitchenwares</h2>
-                <p style={{textAlign:"center",}} >  ______________________________________________________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
   
             </div>
         <div  className="flashsale">
             
             <div style={{display:"flex"}}>
                     {homedecor?.map((el)=>(
-                        <div key ={el.id}className="prodcard">
+                        <div key ={el.id}className="Homeprodcard">
                             <div>
                                 <img src={el.images[0]} alt="" />
                             </div>
@@ -282,5 +278,30 @@ useEffect(()=>{
 
                 </div>
         </div>
+
+
+        <div style={{ width:"80%",margin:"auto"}}>
+                <div><h1>Featured</h1> <hr /></div>
+                
+            </div>
+          <div className="featuredslide">
+            <FiChevronLeft style={{fontSize:"3rem", color:"#F98D29",marginTop:"10%"}}/>
+                 <div>
+                    <img src="https://d64lkarmo2mrq.cloudfront.net/img/as_seen_on/chainmag.jpg"  alt="#" />
+                    <h4>Chain Magazine</h4>
+                    <h3>MeanBuy - An Indian StartUp eCommerce Market Place</h3>
+                </div>
+                <div>
+                    <img src="https://d64lkarmo2mrq.cloudfront.net/img/as_seen_on/sillicon.jpg" alt="#" />
+                    <h4>Silicon India</h4>
+                    <h3>10 Most Promising E- Commerce Startups</h3>
+                </div>
+                <div>
+                    <img src="https://d64lkarmo2mrq.cloudfront.net/img/as_seen_on/medium.jpg" alt="#" />
+                    <h4>Flair Explorer</h4>
+                    <h3>E-commerce Inside the Startup Ecosystem in India</h3>
+                </div>
+           <FiChevronRight style={{fontSize:"3rem", color:"#F98D29",marginTop:"10%"}}/>
+         </div>
     </div>
 }

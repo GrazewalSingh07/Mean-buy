@@ -1,25 +1,23 @@
+
 import { useEffect, useState } from "react"
-import { useDispatch,useSelector } from "react-redux"
-import {useParams} from "react-router"
-import { getproduct } from "../Redux/Product/actions"
- 
-import { useNavigate } from "react-router-dom"
- 
-export const Products=()=>{
+import { useSelector } from "react-redux"
+import { useNavigate, useParams } from "react-router-dom"
+import "./Productpage.css"
+export const SearchedProducts=()=>{
     const [filter,setfilter]=useState("all")
-    const [filtereddata,setfiltereddata]=useState([])
+ 
     const navigate=useNavigate()
-    const data=useSelector((state)=>state.product.data)
-    const {cat}=useParams()
-    const dispatch=useDispatch()
-   
-  
+
+    const {query}=useParams()
+    const data=useSelector((state)=>state.search.data)
+    const [filtereddata,setfiltereddata]=useState(data)
+    
+ 
+    
+    
     useEffect(()=>{
-        dispatch(getproduct(cat))
-    },[cat])
-    const [sort,setsort]=useState("asc")
-    
-    
+        setfiltereddata(data)
+    },[query])
     
     function handleChange(value){
       setfilter(value)
@@ -29,6 +27,7 @@ export const Products=()=>{
         
         if(filter=="all"){
             setfiltereddata(data)
+            return
         }
         else{
             let temp=data?.filter((el)=>{
@@ -39,13 +38,13 @@ export const Products=()=>{
          setfiltereddata(temp)
         }
        
-        // console.log(temp)
+        // setfiltereddata(data)
        
-    },[filter,cat])
+    },[filter])
 
-    useEffect(()=>{
-        setfiltereddata(data)
-    },[])
+    // useEffect(()=>{
+    //     setfiltereddata(data)
+    // },[])
     return <div style={{display:"flex"}}>
        <div style={{width:"20%"}}>
          <div>
@@ -63,7 +62,7 @@ export const Products=()=>{
        <div className="products">
         {filtereddata?.map((el)=>{
             if(el.category=="men's clothing"||el.category=="women's clothing"||el.category=="jewelery"||el.category=="electronics"){
-                
+                // console.log(el)
                return <div key={el.id} className="prodcard" onClick={()=>{navigate(`/product-detail/${el.id}`)}}>
                     <div >
                      <img className="img"src={el.image} alt="" />
@@ -103,4 +102,3 @@ export const Products=()=>{
         
     </div>
 }
-     

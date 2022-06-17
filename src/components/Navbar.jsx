@@ -2,17 +2,19 @@
  import {FaShoppingCart} from"react-icons/fa"
  import { Link } from "react-router-dom";
 import {BsSearch} from "react-icons/bs" 
- 
+import { useEffect, useState } from "react";
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Dropdown, Menu, message, Space} from 'antd';
  import "./Navbar.css"
+import { useDispatch,useSelector } from "react-redux";
+import { searchproduct } from "../Redux/search/action";
 
+import { useNavigate } from "react-router-dom";
+import useSelection from "antd/lib/table/hooks/useSelection";
   const handleMenuClick = (e) => {
     message.info('Click on menu item.');
     console.log('click', e);
   };
-
-
 
 
 const menu = (
@@ -89,11 +91,24 @@ const menu = (
     </div>
     );
 export const Navbar=()=>{
+    const isAuth=useSelector((state)=>state.login.LoginSuccess)
+
+   
+    const navigate=useNavigate()
+    const [search,setsearch]=useState("")
+const dispatch=useDispatch()
+    const searchFun=()=>{
+         dispatch(searchproduct(search)).then(()=>{
+            navigate(`/search-page/${search}`)
+         })
+    }
+ 
+
     return <div style={{width:"90%",margin:" 1rem auto"}}>
         <div style={{display:"flex",justifyContent:"space-around"}}>
             <div className="logoandsearch">
-                <span ><img className="logo" src="https://d64lkarmo2mrq.cloudfront.net/baselogo.png" alt="" /></span>
-               <span> <input type="text" placeholder="Search"className="inputbox" /> <BsSearch style={{marginLeft:"-3.5rem"}}/></span>
+                <span onClick={()=>navigate("/")}style={{cursor:"pointer"}} ><img className="logo" src="https://d64lkarmo2mrq.cloudfront.net/baselogo.png" alt="" /></span>
+               <span> <input type="text" placeholder="Search"className="inputbox" onChange={(e)=>{setsearch(e.target.value)}}/> <BsSearch  onClick={searchFun}style={{marginLeft:"-3.5rem"}}/></span>
             </div>
             <div className="rightNavtop">
                 <div style={{display:"flex", width:"100%"}}>
@@ -102,11 +117,11 @@ export const Navbar=()=>{
                     <p  style={{padding:"10px"}}>Delivery info</p>
                 </div>
                 <div className="siguplogin">
-                    <p><Link style={{ color:"black"}}to="/login">LOGIN</Link> / <Link   style={{ color:"black"}}to="/signup">SIGN UP</Link></p>
-                    <p><b>WELCOME GUEST</b></p>
+                  {isAuth==true?<p><b>Hellow, User</b></p>:<p><Link style={{ color:"black"}}to="/login">LOGIN</Link> / <Link   style={{ color:"black"}}to="/signup">SIGN UP</Link></p>}  
+                    {isAuth==true?null:<p><b>WELCOME GUEST</b></p>}
                 </div>
                 <div>
-                    <FaShoppingCart style={{fontSize:"2rem",color:"#F98D29"}}/>
+                    <FaShoppingCart style={{fontSize:"2rem",color:"#F98D29"}} onClick={()=>navigate("/cart")}/>
                 </div>
             </div>
         </div>
@@ -120,11 +135,11 @@ export const Navbar=()=>{
                         </Space>
                     </Button>
                 </Dropdown>
-                <Link style={{color:"black"}}to="/flase-sale">Flash Sale</Link>
-                <Link style={{color:"black"}} to="/Best-deals">Best Deals</Link>
-                <Link style={{color:"black"}} to="/Shop-by-brand">Shop by Brand</Link>
-                <Link style={{color:"black"}} to="/trending">Trending</Link>
-                <Link style={{color:"black"}}to="/new-arrivals">NewArrivals</Link>
+                <Link style={{color:"black"}}to="/products/electronics">Flash Sale</Link>
+                <Link style={{color:"black"}} to="/products/fashion">Best Deals</Link>
+                <Link style={{color:"black"}} to="/products/jewelery">Shop by Brand</Link>
+                <Link style={{color:"black"}} to="/products/belt">Trending</Link>
+                <Link style={{color:"black"}}to="/products/wallet">NewArrivals</Link>
         </div>
     </div>
 }
