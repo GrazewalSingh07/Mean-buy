@@ -19,14 +19,14 @@ export const getproductfailure=()=>{
 export const getproduct=(query)=>(dispatch)=>{
     dispatch(getproductrequest)
     if(query=="fashion"){
-        return axios.get(`http://localhost:4000/products?category=women's clothing`).then((res)=>{
+        return axios.get(`https://mean-buy.herokuapp.com/products?category=women's clothing`).then((res)=>{
         dispatch(getproductsuccess(res.data))
         // console.log(res.data)
         }).catch((err)=>{
             dispatch(getproductfailure)
         })
     }
-    return axios.get(`http://localhost:4000/products?category=${query}`).then((res)=>{
+    return axios.get(`https://mean-buy.herokuapp.com/products?category=${query}`).then((res)=>{
         dispatch(getproductsuccess(res.data))
         // console.log(res.data)
     }).catch((err)=>{

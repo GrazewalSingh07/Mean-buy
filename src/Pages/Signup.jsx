@@ -17,9 +17,7 @@ export const SignUp=()=>{
 
     const RegisterFunction=()=>{
         if(password==Confirmpassword&& email!="" &&password!=""){
-            dispatch(Register({ "name": "MASAI School","email":email, "password":password,"username": "masai-school",
-            "mobile": "9876543210",
-            "description": "A Transformation in education!" })).then((res)=>{
+            dispatch(Register({ "firstName": "Masai","email":email, "password":password,"lastName": "School" })).then((res)=>{
                 navigate("/login")
             })
         }

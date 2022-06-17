@@ -27,6 +27,7 @@ export const loginReducer=(state=initState,{type,payload})=>{
                    ...state,
                  LoginFailed:true,
                  LoginSuccess:false,
+                 token:null
                }
            }
            default:{

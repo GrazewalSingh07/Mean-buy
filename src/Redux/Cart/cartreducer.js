@@ -80,6 +80,7 @@ export const cartReducer=(state=initState,{type,payload})=>{
         case types.REMOVE_FROM_CART_FAILURE:{
             return{
                 ...state, 
+                
                 removedfromcart:false,
                 removedfromcart:false,
                 removefromcartfailed:true

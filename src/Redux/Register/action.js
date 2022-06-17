@@ -23,7 +23,7 @@ export const RegisterFailure=()=>{
 export const Register=(data)=>(dispatch)=>{
 
     dispatch(loginrequest)
-   return axios.post("https://masai-api-mocker.herokuapp.com/auth/register",data).then((res)=>{
+   return axios.post("https://shop-clone-api.herokuapp.com/register",data).then((res)=>{
         dispatch(RegisterSuccess())
     }).catch((err)=>{
         dispatch(RegisterFailure)

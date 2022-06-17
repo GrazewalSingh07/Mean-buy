@@ -20,7 +20,7 @@ export const searchproduct=(q)=>(dispatch)=>{
     console.log(q)
     if(q=="fashion"){
         dispatch(getproductrequest)
-        return axios.get(`http://localhost:4000/products/?category_like=men's clothing&women's clothing`).then((res)=>{
+        return axios.get(`https://mean-buy.herokuapp.com/products/?category_like=men's clothing&women's clothing`).then((res)=>{
         dispatch(getproductsuccess(res.data))
         // console.log(res.data)
         }).catch((err)=>{
@@ -29,7 +29,7 @@ export const searchproduct=(q)=>(dispatch)=>{
     }
     else{
         dispatch(getproductrequest)
-        return axios.get(`http://localhost:4000/products/?category_like=${q}`).then((res)=>{
+        return axios.get(`https://mean-buy.herokuapp.com/products/?category_like=${q}`).then((res)=>{
             dispatch(getproductsuccess(res.data))
             // console.log(res.data)
         }).catch((err)=>{

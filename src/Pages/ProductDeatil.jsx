@@ -13,7 +13,7 @@ export const ProductDeatail=()=>{
     const navigate=useNavigate()
     const isAuth=useSelector((state)=>state.login.LoginSuccess)
     useEffect(()=>{
-        axios.get(`http://localhost:4000/products/${id}`).then((res)=>{
+        axios.get(`https://mean-buy.herokuapp.com/products/${id}`).then((res)=>{
            setempdata(res.data)
             
         })

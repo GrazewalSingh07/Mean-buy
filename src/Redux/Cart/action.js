@@ -22,44 +22,13 @@ export const addtocartfailure=()=>{
 export const addtocart=(data)=>(dispatch)=>{
 
     dispatch(addtocartrequest)
-    return axios.post("http://localhost:4000/cart",data).then((res)=>{
+    return axios.post("https://mean-buy.herokuapp.com/cart",data).then((res)=>{
         dispatch(addtocartsuccess)
      }).catch((err)=>{
         dispatch(addtocartfailure)
      })
    
 }
-
-
-//remove from cart
-export const removefromcartrequest=()=>{
-    return {
-        type:types.REMOVE_FROM_CART_REQUEST
-    }
-}
-export const removefromcartsuccess=()=>{
-    return {
-        type:types.REMOVE_FROM_CART_SUCCESS
-        
-    }
-}
-export const removefromcartfailure=()=>{
-    return {
-        type:types.REMOVE_FROM_CART_FAILURE
-    }
-}
-
-export const removefromcart=(id)=>(dispatch)=>{
-
-    dispatch(removefromcartrequest)
-    return axios.delete(`http://localhost:4000/cart/${id}`).then((res)=>{
-        dispatch(removefromcartsuccess)
-     }).catch((err)=>{
-        dispatch(removefromcartfailure)
-     })
-   
-}
-
 //get cart
 
 export const getcartrequest=()=>{
@@ -82,10 +51,41 @@ export const getcartfailure=()=>{
 export const getcart=()=>(dispatch)=>{
 
     dispatch(getcartrequest)
-     return axios.get(`http://localhost:4000/cart`).then((res)=>{
+     return axios.get(`https://mean-buy.herokuapp.com/cart`).then((res)=>{
         console.log(res.data)
         dispatch(getcartsuccess(res.data))
      }).catch((err)=>{
             dispatch(getcartfailure)
      })
 }
+
+//remove from cart
+export const removefromcartrequest=()=>{
+    return {
+        type:types.REMOVE_FROM_CART_REQUEST
+    }
+}
+export const removefromcartsuccess=()=>{
+    return {
+        type:types.REMOVE_FROM_CART_SUCCESS
+        
+    }
+}
+export const removefromcartfailure=()=>{
+    return {
+        type:types.REMOVE_FROM_CART_FAILURE
+    }
+}
+
+export const removefromcart=(id)=>(dispatch)=>{
+
+    dispatch(removefromcartrequest)
+    return axios.delete(`https://mean-buy.herokuapp.com/cart/${id}`).then((res)=>{
+        dispatch(removefromcartsuccess)
+        dispatch(getcart)
+     }).catch((err)=>{
+        dispatch(removefromcartfailure)
+     })
+   
+}
+

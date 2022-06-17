@@ -17,7 +17,7 @@ export const Login=()=>{
             alert("Field must not be empty")
         }
        else{
-        dispatch(login({"password":password,"username":email})).then(()=>{
+        dispatch(login({"password":password,"email":email})).then(()=>{
             navigate("/")
         })
        

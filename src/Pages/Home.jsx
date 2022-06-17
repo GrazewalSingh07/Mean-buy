@@ -34,7 +34,7 @@ const [jwellery,setjwellery]=useState(null)
 
 
 useEffect(()=>{
-    axios.get(`http://localhost:4000/products`).then((res)=>{
+    axios.get(`https://mean-buy.herokuapp.com/products`).then((res)=>{
        let roomdecordata=res.data.filter((el)=>{
         if(el.category=="Roomdecor"){
             return el

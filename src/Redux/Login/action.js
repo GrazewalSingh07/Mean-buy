@@ -23,7 +23,9 @@ export const loginFailure=()=>{
 export const login=(data)=>(dispatch)=>{
 
     dispatch(loginrequest)
-   return axios.post("https://masai-api-mocker.herokuapp.com/auth/login",data).then((res)=>{
+    console.log(data)
+   return axios.post("https://shop-clone-api.herokuapp.com/login",data).then((res)=>{
+    console.log(res.data.token)
         dispatch(loginSuccess(res.data.token))
     }).catch((err)=>{
         dispatch(loginFailure)

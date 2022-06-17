@@ -91,9 +91,18 @@ const menu = (
     </div>
     );
 export const Navbar=()=>{
-    const isAuth=useSelector((state)=>state.login.LoginSuccess)
-
-   
+    const isAuth=useSelector((state)=>state.login.token)
+ 
+   function opencart(){
+    if(!isAuth){
+        alert("log in, please")
+        navigate("/login")
+    }
+      else{
+        navigate("/cart")
+      }
+     
+   }
     const navigate=useNavigate()
     const [search,setsearch]=useState("")
 const dispatch=useDispatch()
@@ -117,11 +126,11 @@ const dispatch=useDispatch()
                     <p  style={{padding:"10px"}}>Delivery info</p>
                 </div>
                 <div className="siguplogin">
-                  {isAuth==true?<p><b>Hellow, User</b></p>:<p><Link style={{ color:"black"}}to="/login">LOGIN</Link> / <Link   style={{ color:"black"}}to="/signup">SIGN UP</Link></p>}  
-                    {isAuth==true?null:<p><b>WELCOME GUEST</b></p>}
+                  {isAuth?<p><b>Hellow, User</b></p>:<p><Link style={{ color:"black"}}to="/login">LOGIN</Link> / <Link   style={{ color:"black"}}to="/signup">SIGN UP</Link></p>}  
+                  {isAuth?null:<p><b>WELCOME GUEST</b></p>}
                 </div>
                 <div>
-                    <FaShoppingCart style={{fontSize:"2rem",color:"#F98D29"}} onClick={()=>navigate("/cart")}/>
+                    <FaShoppingCart style={{fontSize:"2rem",color:"#F98D29"}} onClick={opencart}/>
                 </div>
             </div>
         </div>
