@@ -8,7 +8,7 @@ export const addtocartrequest=()=>{
 }
 export const addtocartsuccess=(payload)=>{
     return {
-        type:types.ADD_TO_CART_SADD_TO_CART_SUCCESS,
+        type:types.ADD_TO_CART_SUCCESS,
         payload
     }
 }

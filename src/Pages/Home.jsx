@@ -7,9 +7,7 @@ import {FiChevronRight,FiChevronLeft} from "react-icons/fi"
 
 
 export const Home=()=>{
-    
-const [fastmovingproduct,setfastmovingproduct]=useState(null)
-
+     
 const [belt,setbelt]=useState(null)
 const [wallet,setwallet]=useState(null)
 const [homedecor,sethomedecor]=useState(null)
@@ -17,18 +15,7 @@ const [homedecor,sethomedecor]=useState(null)
 const [fashion,setfashion]=useState(null)
 
 const [toys,settoys]=useState(null)
-    
-const [wirelessSpeakers,setWirelessSpeakers]=useState(null)
-
-const [makeupaccessories,setmakeupaccessories]=useState(null)
-
-const [smartwatches,setsmartwatches]=useState(null)
-
-const [kitchenwares,setkitchenwares]=useState(null)
-
-const [gardening,setgardening]=useState(null)
-const [usbfans,setusbfans]=useState(null)
-const [bathStorage,setBathstorage]=useState(null)
+ 
 
 const [jwellery,setjwellery]=useState(null)
 
