@@ -66,7 +66,7 @@ useEffect(()=>{
         <div  className="jewellery">
             <div style={{display:"flex" , textAlign:"center", margin:"auto"}}>
                 <h2 style={{textAlign:"center"}}>Fast moving product</h2>
-                <p style={{textAlign:"center",}} > _______________________________________________________________________________________________________________________________________________ <Link to={`products/jewelery`}>VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} > ______________________________________________________________________________________________________________________________________________ <Link to={`products/jewelery`}>VIEW ALL</Link></p>
   
             </div>
             <div style={{display:"flex"}}>
@@ -91,7 +91,7 @@ useEffect(()=>{
        
             <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Flash Sale</h2>
-                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
 
             </div>
             <div  className="flashsale">
@@ -116,7 +116,7 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Fashion</h2>
-                <p style={{textAlign:"center",}} >  _________________________________________________________________________________________________________________________________________________________ <Link to="products/fashion">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  _____________________________________________________________________________________________________________________________________________________________ <Link to="products/fashion">VIEW ALL</Link></p>
   
          </div>
         <div  className="flashsale">
@@ -142,7 +142,7 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Belts</h2>
-                <p style={{textAlign:"center",}} >  _________________________________________________________________________________________________________________________________________________________ <Link to="products/belt">VIEW ALL</Link> </p>
+                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________________________ <Link to="products/belt">VIEW ALL</Link> </p>
   
             </div>
         <div  className="flashsale">
@@ -168,7 +168,7 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center",margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Wallets</h2>
-                <p style={{textAlign:"center",}} >  _________________________________________________________________________________________________________________________________________________<Link to="products/wallet">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  ________________________________________________________________________________________________________________________________________________________________<Link to="products/wallet">VIEW ALL</Link></p>
   
             </div>
         <div  className="flashsale">
@@ -194,7 +194,7 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>Electronics</h2>
-                <p style={{textAlign:"center",}} >  ______________________________________________________________________________________________________________________________________________________ <Link to="products/electronics">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  ____________________________________________________________________________________________________________________________________________________________ <Link to="products/electronics">VIEW ALL</Link></p>
   
             </div>
         <div  className="flashsale">
@@ -220,7 +220,7 @@ useEffect(()=>{
         </div>
         <div style={{display:"flex" , textAlign:"center", margin:"2rem 5rem 2rem 20rem"}}>
                 <h2 style={{textAlign:"center"}}>kitchenwares</h2>
-                <p style={{textAlign:"center",}} >  __________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
+                <p style={{textAlign:"center",}} >  ___________________________________________________________________________________________________________________________________________________________ <Link to="products/Roomdecor">VIEW ALL</Link></p>
   
             </div>
         <div  className="flashsale">
@@ -257,9 +257,9 @@ useEffect(()=>{
             <Link to=""><img src="https://d64lkarmo2mrq.cloudfront.net/img/home/2022powerbanks.webp" alt="" /></Link>
         
        </div>
-       <div style={{display:"flex" , textAlign:"center", margin:"auto"}}>
+       <div style={{display:"flex" , textAlign:"center", marginLeft:"20rem", marginTop:"2rem"}}>
                 <h2>New Arrivals</h2>
-                <p>  ____________________________________________________________________________________________________________________________________________________________________________________</p>
+                <p>  ________________________________________________________________________________________________________________________________________________________</p>
 
                 <div>
 

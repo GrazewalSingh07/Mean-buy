@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux/es/exports"
 import { Navigate, useNavigate } from "react-router-dom"
 import { getcart, removefromcart } from "../Redux/Cart/action"
@@ -19,8 +19,17 @@ export const Cart=()=>{
     //    navigate("/login")
       
     // }
-    return <div>
-         {cart?.map((el)=>{
+    const [sum,setsum]=useState(0)
+    useEffect(()=>{
+        let temp=0
+        for(let i=0;i<cart.length;i++){
+            temp+=cart.price
+        }
+        setsum(sum)
+    },[cart])
+    return <div className="section" >
+        <div className="cart">
+        {cart?.map((el)=>{
             if(el.category=="men's clothing"||el.category=="women's clothing"||el.category=="jewelery"||el.category=="electronics"){
                 // console.log(el)
                return <div key={el.id} className="prodcard" onClick={()=>{navigate(`/product-detail/${el.id}`)}}>
@@ -49,7 +58,7 @@ export const Cart=()=>{
                             <span><p> {el?.title}</p></span>
 
                             <span style={{display:"flex"}}>
-                                <span><p><b>Price :</b>INR {el.price*78}/-</p></span>
+                                <span><p><b>Price : </b>INR {el.price*78}/-</p></span>
                                 <span><p  style={{display:"flex",background:"green",color:"white", padding:" .5rem 1rem", margin:"1rem"}}><b>Rating :</b>{(Math.random() * (5 - 1 + 1) + 1).toFixed(1)}/5</p></span>
                             </span>
                             <p style={{color:"green"}}>SHIPPING FREE</p>
@@ -62,5 +71,26 @@ export const Cart=()=>{
              }
             
             })}
+        </div>
+        <div className="rightside">
+        <div className="righttop">
+            <p className="titles">Cart Details</p>
+            <hr />
+            <div className="titles" >
+                <p ><b>Total items :{cart.length}</b> </p>
+                <p ><b>Sub Total : {sum}</b> </p>
+                
+            </div>
+            <hr />
+            <p className="titles"><b>Cart Total : {sum}</b> </p>
+            <button className="editcart">EDIT CART</button>
+        </div>
+         <div className="rightbottom">
+            <img  style={{width:"100px"}} src="https://www.meanbuy.com/assets/img/india/logo/logo_main.png" alt="" />
+            <p>Our Shop. Your Price</p>
+            <p>Fell the power to buy at your price</p>
+            <hr style={{width:"50px" ,height:"3px",background:"#F98D29",border:"none"}} />
+        </div>
+       </div>
     </div>
 }

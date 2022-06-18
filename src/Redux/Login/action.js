@@ -26,6 +26,7 @@ export const login=(data)=>(dispatch)=>{
     console.log(data)
    return axios.post("https://shop-clone-api.herokuapp.com/login",data).then((res)=>{
     console.log(res.data.token)
+    localStorage.setItem(JSON.stringify("token",token))
         dispatch(loginSuccess(res.data.token))
     }).catch((err)=>{
         dispatch(loginFailure)

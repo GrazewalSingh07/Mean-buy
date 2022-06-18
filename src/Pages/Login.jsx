@@ -24,7 +24,7 @@ export const Login=()=>{
        }
     }
     return  <div>
-        <div style={{width:"90%",margin:" 1rem auto", }}>
+        {/* <div style={{width:"90%",margin:" 1rem auto", }}>
         <div style={{display:"flex",justifyContent:"space-around"}}>
             <div className="logoandsearch">
                 <span ><img className="logo" src="https://d64lkarmo2mrq.cloudfront.net/baselogo.png" alt="" /></span>
@@ -46,7 +46,7 @@ export const Login=()=>{
             </div>
         </div>
         
-    </div>
+    </div> */}
         <hr/>
        <section className="section">
         <div>

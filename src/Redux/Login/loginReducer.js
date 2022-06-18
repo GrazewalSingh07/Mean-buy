@@ -4,7 +4,7 @@ const initState={
    isLoggingin:false,
    LoginSuccess:false,
    LoginFailed:false,
-   token:null
+   token:JSON.parse(localStorage.getItem("token"))|| null
 }
 
 export const loginReducer=(state=initState,{type,payload})=>{
@@ -19,6 +19,7 @@ export const loginReducer=(state=initState,{type,payload})=>{
                return{
                    ...state,
                   LoginSuccess:true,
+                  
                   token:payload
                }
            }
