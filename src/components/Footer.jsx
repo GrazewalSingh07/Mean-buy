@@ -65,10 +65,10 @@ export const Footer=()=>{
                 </div>
                 <div>
                     <div>
-                        <input type="text" placeholder="Your Email Address" />
-                        <input type="submit"value="Subscribe" />
+                        <input className="footerinput" type="text" placeholder="Your Email Address" />
+                        <input type="submit"value="Subscribe" style={{border:"none", padding:".5rem 1rem",color:"white", background:"#F98D29", cursor:"pointer"}} />
                     </div>
-                    <div  style={{ display:"flex",margin:"auto"}}>
+                    <div  style={{ display:"flex",margin:"auto",textAlign:"center"}}>
                         <FaAmazon style={{fontSize:"1rem", margin:"5px", cursor:"pointer"}}/>
                         <GrAmex style={{fontSize:"1rem",margin:"5px", cursor:"pointer"}}/>
                         <SiGooglepay style={{fontSize:"1rem",margin:"5px", cursor:"pointer"}}/>
